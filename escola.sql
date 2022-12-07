@@ -93,12 +93,12 @@ select * from Disciplinas;
 select * from Alunos;
 select * from Horarios;
 CREATE VIEW vw_professores AS
-SELECT p.id_professor AS id_professor, p.nome_prof, p.formacao, t.id AS id, t.telProf
+SELECT p.id_professor AS id_professor, p.nome_professor, p.formacao, t.id AS id, t.telProf
 FROM Telefones t
 INNER JOIN Professores p ON p.id_professor = t.id;
 select * from vw_professores;
 create view vw_prof_turma as
-select t.id_professor, p.nome_prof, t.tipo
+select t.id_professor, p.nome_professor, t.tipo
 from Professores p inner join Turmas t;
 select * from vw_prof_turma;
 CREATE VIEW vw_turmas_alunos AS
@@ -112,7 +112,7 @@ FROM Turmas t
 INNER JOIN Disciplinas d ON t.cod_turma = d. id_Discisplina;
 select * from vw_turmas_disc;
 CREATE VIEW vw_disc_horario AS
-SELECT d. id_Discisplina AS  id_Discisplina, d.nomeDisc, h.id_Hor AS id_Hor, h.inicio, h.fim
+SELECT d. id_Discisplina AS  id_Discisplina, d.nomeDisciplina, h.id_Hor AS id_Hor, h.inicio, h.fim
 FROM Disciplinas d
 INNER JOIN Horarios h ON d. id_Discisplina = h.id_Hor;
 select * from vw_disc_horario;
